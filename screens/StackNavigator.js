@@ -3,6 +3,7 @@ import { Image, TouchableOpacity } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/Home";
 import About from "../screens/About";
+import QuiteTime from "../screens/QuiteTime"
 
 let LogoTitle = () => {
   return (
@@ -31,6 +32,7 @@ const MainStackNavigator = () => {
         })}
       />
       <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="QuiteTime" component={QuiteTime} />
     </Stack.Navigator>
   );
 };
