@@ -12,7 +12,7 @@ import {
 import * as Linking from 'expo-linking';
 import { Link } from "@react-navigation/native";
 
-url = "https://www.google.com/maps/search/?api=1&query=Crescenta+Valley+Korean+United+Methodist+Church"
+let url = "https://www.google.com/maps/search/?api=1&query=Crescenta+Valley+Korean+United+Methodist+Church"
 
 const About = () => {
   return (
@@ -56,6 +56,29 @@ const About = () => {
             </Text>
           </View>
         </View>
+
+        <View style={styles.map_container}>
+          <Text style={{ alignSelf: "center", fontSize: 20, marginTop: 10 }}>
+              교회 주소
+            </Text>
+            <View
+              style={{
+                height: 10,
+                width: "50%",
+                color: "black",
+                borderBottomWidth: 1,
+                alignSelf: "center",
+              }}
+            />
+            <Text style={{alignSelf: "center", marginTop: 10, fontSize: 14, marginBottom: 15, }}> 2700 Montrose Ave. Montrose, CA 91020 </Text>
+          <TouchableOpacity onPress={ () => Linking.openURL(url) }>
+            <Image
+              style={{ alignSelf: "center", width: "85%", height: 400 }}
+              source={require('../assets/image_10.png')}
+            />
+          </TouchableOpacity>
+        </View>
+
         <View>
           <Text style={{ alignSelf: "center", fontSize: 20, marginTop: 10 }}>
             담임목사 김용근 목사
@@ -75,21 +98,14 @@ const About = () => {
             source={require("../assets/pastor.jpg")}
           />
         </View>
-        <View style={styles.pastor_image_container}>
+        <View style={styles.pastor_description_container}>
           <Text style={styles.pastor_description}>
             {
-              "​성화감리교회 담임목사\n서울 광림교회 부목사\n(주)벽산 사목\n미국 윌셔연합감리교회 부목사\n현재 크레센타밸리한인연합감리교회 담임목사\n감리교 목회신학대학원(M. Div)\n미국 풀러신학교(D. Min in GM)"
+              "크레센타밸리한인연합감리교회에 오신것을 환영합니다.우리 교회는 23년의 숙성을 통해 크레센타밸리한인연합감리교회로 변화되었습니다. 오직 이 땅위에 좋은 교회의 터전을 닦아 하나님 나라의 초석으로 성숙 되고자하는 크레센타밸리한인연합감리교회는 지역과 세계를 향한 선교적 사명의 일념으로 하나 되어 다음 같은 사명선언문을 세웁니다."
             }
           </Text>
         </View>
-        <View style={styles.map_container}>
-          <TouchableOpacity onPress={ () => Linking.openURL(url) }>
-            <Image
-              style={{ alignSelf: "center", width: "90%", height: 200 }}
-              source={require('../assets/church.PNG')}
-            />
-          </TouchableOpacity>
-        </View>
+        
       </ScrollView>
     </View>
   );
@@ -120,7 +136,6 @@ const styles = StyleSheet.create({
   information_container: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#F8F8F8",
     marginBottom: 10,
   },
   description_container: {
@@ -151,16 +166,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
   },
+  pastor_description_container: {
+    margin: 10,
+  },
   pastor_description: {
     marginHorizontal: 15,
-    fontSize: 16,
+    fontSize: 14,
     color: "black",
-    lineHeight: 26,
-    letterSpacing: 0.6,
+    lineHeight: 24,
+    letterSpacing: 0.1,
+    
   },
   map_container: {
     width: "100%",
-    height: 350,
+    height: 510,
     marginTop: 10,
   },
 });

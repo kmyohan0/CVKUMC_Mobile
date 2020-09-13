@@ -29,7 +29,7 @@ const QuiteTime = () => {
     <View style={styles.statusBar_container}>
       <StatusBar barStyle="default" hidden={false} translucent={false} />
       <View style={styles.center}>
-      {isLoading ? <ActivityIndicator style={margin = 20} /> : (
+      {isLoading ? <ActivityIndicator style={{margin: 20}} /> : (
         <FlatList
           data={data.slice(0, 10)}
           maxToRenderPerBatch={5}
